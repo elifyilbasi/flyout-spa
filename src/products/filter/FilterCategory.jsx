@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import FilterCategoryItem from "./filterCategoryItem/FilterCategoryItem";
 
 export default function FilterCategory({
@@ -6,8 +6,10 @@ export default function FilterCategory({
   updateFilter,
   selectedFilters,
 }) {
-  console.log(selectedFilters);
-  const filters = selectedFilters[filterType.categoryName];
+  const filters = useMemo(() => selectedFilters[filterType.categoryName], [
+    selectedFilters,
+    filterType,
+  ]);
 
   const onItemCheckChange = (changedItemName, newValue) => {
     const shouldAdd = !!newValue;
@@ -33,6 +35,7 @@ export default function FilterCategory({
             {filterType.values.map((filterItem) => {
               return (
                 <FilterCategoryItem
+                  key={filterItem.categoryName}
                   checked={filters.includes(filterItem)}
                   onCheckedChange={onItemCheckChange}
                   itemName={filterItem}

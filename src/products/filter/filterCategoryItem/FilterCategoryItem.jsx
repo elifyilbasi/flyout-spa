@@ -10,7 +10,7 @@ export default function FilterCategoryItem({
       <input
         className="form-check-input"
         type="checkbox"
-        value={checked}
+        checked={checked}
         onChange={(event) => onCheckedChange(itemName, event.target.checked)}
       />
       <span className="form-check-label">{itemName}</span>

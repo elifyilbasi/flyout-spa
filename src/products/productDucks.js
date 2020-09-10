@@ -20,20 +20,16 @@ export const updateFilter = (filterType, newValues) => ({
 });
 
 const INITIAL_STATE_SELECTED_FILTERS = {
-  selectedFilters: {
-    size: [],
-    color: [],
-    gender: [],
-  },
+  size: [],
+  color: [],
+  gender: [],
 };
 
-const INITIAL_STATE_PRODUCTS = {
-  products: null,
-};
+const INITIAL_STATE_PRODUCTS = null;
 
 const INITIAL_STATE = {
-  ...INITIAL_STATE_SELECTED_FILTERS,
-  ...INITIAL_STATE_PRODUCTS,
+  products: INITIAL_STATE_PRODUCTS,
+  selectedFilters: INITIAL_STATE_SELECTED_FILTERS,
 };
 
 const reducer = function (state = INITIAL_STATE, action) {
@@ -46,6 +42,12 @@ const reducer = function (state = INITIAL_STATE, action) {
       return {
         ...state,
         selectedFilters: { ...state.selectedFilters, [filterType]: newValues },
+      };
+    }
+    case TYPES.resetFilters: {
+      return {
+        ...state,
+        selectedFilters: INITIAL_STATE_SELECTED_FILTERS,
       };
     }
     default: {
