@@ -1,0 +1,34 @@
+[
+  {
+    "name": "T-shirt",
+    "size": "M",
+    "color": "Red",
+    "url": "https://picsum.photos/id/232/200",
+    "gender": "MEN",
+    "price": "$10"
+  },
+  {
+    "name": "Hoodie",
+    "size": "S",
+    "color": "Green",
+    "url": "https://picsum.photos/id/543/200",
+    "gender": "WOMEN",
+    "price": "$10"
+  },
+  {
+    "name": "Pants",
+    "size": "L",
+    "color": "Blue",
+    "url": "https://picsum.photos/id/78/200",
+    "gender": "MEN",
+    "price": "$50"
+  },
+  {
+    "name": "Hoodie",
+    "size": "S",
+    "color": "Green",
+    "url": "https://picsum.photos/id/89/200",
+    "gender": "WOMEN",
+    "price": "$10"
+  }
+]

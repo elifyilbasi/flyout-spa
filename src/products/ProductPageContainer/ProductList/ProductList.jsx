@@ -1,11 +1,12 @@
 import React from "react";
 import Product from "./Product/Product";
 
-export default function ProductList() {
+export default function ProductList({ products }) {
   return (
-    <div>
-      <Product />
-      <Product />
+    <div style={{ display: "flex" }}>
+      {products.map((product) => {
+        return <Product productItem={product} />;
+      })}
     </div>
   );
 }
