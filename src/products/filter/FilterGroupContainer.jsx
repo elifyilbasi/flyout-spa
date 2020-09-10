@@ -1,17 +1,20 @@
 import React from "react";
-import FilterCategory from "./FilterCategory";
+import FilterCategoryContainer from "./FilterCategoryContainer";
 
 const FILTERS = [
   {
-    CategoryName: "Color",
+    categoryName: "color",
+    displayName: "Colors",
     values: ["RED", "GREEN", "BLUE"],
   },
   {
-    CategoryName: "Size",
+    categoryName: "size",
+    displayName: "Sizes",
     values: ["SMALL", "MEDIUM", "LARGE"],
   },
   {
-    CategoryName: "Gender",
+    categoryName: "gender",
+    displayName: "Genders",
     values: ["WOMEN", "MEN"],
   },
 ];
@@ -21,7 +24,12 @@ export default function FilterGroupContainer() {
     <aside className="col-sm-4">
       <p>Filter Group</p>
       {FILTERS.map((filter) => {
-        return <FilterCategory filterType={filter} />;
+        return (
+          <FilterCategoryContainer
+            filterType={filter}
+            key={filter.CategoryName}
+          />
+        );
       })}
     </aside>
   );

@@ -1,12 +1,16 @@
-import React from "react";
+import { connect } from "react-redux";
 import ProductList from "./ProductList/ProductList";
-import productsJson from "../../products.json";
+import { productAddedToCart, productRemovedFromCart } from "../cartDucks";
+import { fetchProducts } from "../productDucks";
 
-export default function ProductPage() {
-  console.log(productsJson);
-  return (
-    <div className="col-sm-8">
-      <ProductList products={productsJson} />
-    </div>
-  );
+function mapStateToProps(state) {
+  return { products: state.products.products };
 }
+
+const mapDispatchToProps = {
+  productAddedToCart,
+  productRemovedFromCart,
+  fetchProducts,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

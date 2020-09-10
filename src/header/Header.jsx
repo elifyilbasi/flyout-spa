@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   return (
@@ -16,7 +18,7 @@ export default function Header() {
             Support
           </a>
           <a className="p-2 text-dark" href="/#">
-            Pricing
+            <FontAwesomeIcon icon={faShoppingCart} color="Dodgerblue" />
           </a>
         </nav>
         <a className="btn btn-outline-primary" href="/#">

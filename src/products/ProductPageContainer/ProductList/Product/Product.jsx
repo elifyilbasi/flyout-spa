@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Product({ productItem }) {
+export default function Product({ productItem, onAddToCart }) {
   return (
     <div className="card sm-4 shadow-sm m-3">
       <div className="card-header">
@@ -16,14 +16,15 @@ export default function Product({ productItem }) {
         </ul>
         <img
           src={productItem.url}
-          class="card-img-top"
+          className="card-img-top"
           alt={productItem.name}
         ></img>
         <button
+          onClick={() => onAddToCart(productItem.id)}
           type="button"
           className="btn btn-lg btn-block btn-outline-primary"
         >
-          Sign up for free
+          Add to cart
         </button>
       </div>
     </div>
