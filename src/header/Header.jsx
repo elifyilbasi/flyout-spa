@@ -1,4 +1,5 @@
 import React from "react";
+import CardPopoverContainer from "../miniCart/CartPopoverContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,13 +9,15 @@ export default function Header() {
       <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
         <h5 className="my-0 mr-md-auto font-weight-normal">Flyout SPA</h5>
         <nav className="my-2 my-md-0 mr-md-3">
-          <a className="p-2 text-dark" href="/#">
+          <button id="Popover1" className="btn p-2 " type="button">
+            {" "}
             <FontAwesomeIcon icon={faShoppingCart} color="Dodgerblue" />
-          </a>
+          </button>
         </nav>
         <a className="btn btn-outline-primary" href="/#">
           Sign up
         </a>
+        <CardPopoverContainer />
       </div>
     </div>
   );

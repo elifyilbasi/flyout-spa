@@ -6,6 +6,8 @@ export default function ProductList({
   products,
   fetchProducts,
   selectedFilters,
+  productAddedToCart,
+  productRemovedFromCart,
 }) {
   useEffect(() => {
     fetchProducts(mockProductList);
@@ -28,11 +30,24 @@ export default function ProductList({
     });
   }, [products, selectedFilters]);
 
+  const onAddToCart = (id) => {
+    const itemToBeAddedToCart = products.filter((product) => {
+      return product.id === id;
+    });
+    productAddedToCart(itemToBeAddedToCart[0].id);
+  };
+
   return (
     <div style={{ display: "flex" }}>
       {filteredProducts &&
         filteredProducts.map((product) => {
-          return <Product productItem={product} key={product.id} />;
+          return (
+            <Product
+              productItem={product}
+              key={product.id}
+              onAddToCart={onAddToCart}
+            />
+          );
         })}
     </div>
   );

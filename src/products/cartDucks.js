@@ -14,22 +14,21 @@ export const productRemovedFromCart = (productId) => ({
 });
 
 const INITIAL_STATE = {
-  cartProducts: null,
+  cartProducts: [],
 };
 
 const reducer = function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case TYPES.productAddedToCart: {
-      const addedItemId = action.payload;
-      const newList = state.products.filter(
-        (productItem) => productItem.id !== addedItemId
-      );
+      const itemToBeAdded = action.payload;
+      const newList = [...state.cartProducts, itemToBeAdded];
+      console.log(action.payload);
       return { ...state, cartProducts: newList };
     }
     case TYPES.productRemovedFromCart: {
       const removedItemId = action.payload;
       const newList = state.cartProducts.filter(
-        (cartProductItem) => cartProductItem.id !== removedItemId
+        (cartProductItem) => cartProductItem !== removedItemId
       );
       return { ...state, cartProducts: newList };
     }

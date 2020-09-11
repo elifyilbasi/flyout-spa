@@ -7,6 +7,7 @@ function mapStateToProps(state) {
   return {
     products: state.products.products,
     selectedFilters: state.products.selectedFilters,
+    cartProducts: state.cartProducts.cartProducts,
   };
 }
 
