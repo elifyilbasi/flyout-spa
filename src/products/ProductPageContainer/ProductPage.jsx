@@ -4,7 +4,10 @@ import { productAddedToCart, productRemovedFromCart } from "../cartDucks";
 import { fetchProducts } from "../productDucks";
 
 function mapStateToProps(state) {
-  return { products: state.products.products };
+  return {
+    products: state.products.products,
+    selectedFilters: state.products.selectedFilters,
+  };
 }
 
 const mapDispatchToProps = {

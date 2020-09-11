@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import FilterCategoryItem from "./filterCategoryItem/FilterCategoryItem";
+import "./filterCategory.css";
 
 export default function FilterCategory({
   filterType,

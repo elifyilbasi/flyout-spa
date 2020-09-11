@@ -1,0 +1,14 @@
+.card {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.card-header {
+  display: flex;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

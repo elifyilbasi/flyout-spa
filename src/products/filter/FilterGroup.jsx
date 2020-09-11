@@ -1,5 +1,6 @@
 import React from "react";
 import FilterCategoryContainer from "./FilterCategoryContainer";
+import "./filterGroup.css";
 
 const FILTERS = [
   {
@@ -21,15 +22,17 @@ const FILTERS = [
 
 export default function FilterGroup({ resetFilters }) {
   return (
-    <aside className="col-sm-4">
-      <p>Filter Group</p>
-      <button
-        onClick={() => resetFilters()}
-        type="button"
-        className="btn btn-lg btn-block btn-outline-primary"
-      >
-        Reset Filters
-      </button>
+    <aside className="col-sm-2 m-2">
+      <div className="row filterGroupWrapper">
+        <p>Filter Group</p>
+        <button
+          onClick={() => resetFilters()}
+          type="button"
+          className="btn btn-outline-primary"
+        >
+          Reset Filters
+        </button>
+      </div>
       {FILTERS.map((filter) => {
         return (
           <FilterCategoryContainer

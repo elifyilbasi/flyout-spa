@@ -2,8 +2,8 @@
   {
     "id": 1,
     "name": "T-shirt",
-    "size": "M",
-    "color": "Red",
+    "size": "MEDIUM",
+    "color": "RED",
     "url": "https://picsum.photos/id/232/200",
     "gender": "MEN",
     "price": "$10"
@@ -11,8 +11,8 @@
   {
     "id": 2,
     "name": "Hoodie",
-    "size": "S",
-    "color": "Green",
+    "size": "SMALL",
+    "color": "GREEN",
     "url": "https://picsum.photos/id/543/200",
     "gender": "WOMEN",
     "price": "$10"
@@ -20,8 +20,8 @@
   {
     "id": 3,
     "name": "Pants",
-    "size": "L",
-    "color": "Blue",
+    "size": "LARGE",
+    "color": "BLUE",
     "url": "https://picsum.photos/id/78/200",
     "gender": "MEN",
     "price": "$50"
@@ -29,8 +29,8 @@
   {
     "id": 4,
     "name": "Hoodie",
-    "size": "S",
-    "color": "Green",
+    "size": "SMALL",
+    "color": "GREEN",
     "url": "https://picsum.photos/id/89/200",
     "gender": "WOMEN",
     "price": "$10"
