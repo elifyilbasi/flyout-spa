@@ -1,13 +1,13 @@
 import React, { useEffect, useMemo } from "react";
-import Product from "./Product/Product";
+import ProductContainer from "./Product/ProductContainer";
 import mockProductList from "../../../products.json";
+import "./productList.css";
 
 export default function ProductList({
   products,
   fetchProducts,
   selectedFilters,
   productAddedToCart,
-  productRemovedFromCart,
 }) {
   useEffect(() => {
     fetchProducts(mockProductList);
@@ -30,24 +30,11 @@ export default function ProductList({
     });
   }, [products, selectedFilters]);
 
-  const onAddToCart = (id) => {
-    const itemToBeAddedToCart = products.filter((product) => {
-      return product.id === id;
-    });
-    productAddedToCart(itemToBeAddedToCart[0].id);
-  };
-
   return (
-    <div style={{ display: "flex" }}>
+    <div className="product-list">
       {filteredProducts &&
         filteredProducts.map((product) => {
-          return (
-            <Product
-              productItem={product}
-              key={product.id}
-              onAddToCart={onAddToCart}
-            />
-          );
+          return <ProductContainer productItem={product} key={product.id} />;
         })}
     </div>
   );

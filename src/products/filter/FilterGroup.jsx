@@ -23,7 +23,7 @@ const FILTERS = [
 export default function FilterGroup({ resetFilters }) {
   return (
     <aside className="col-sm-2 m-2">
-      <div className="row filterGroupWrapper">
+      <div className="filter-group-wrapper">
         <p>Filter Group</p>
         <button
           onClick={() => resetFilters()}

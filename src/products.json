@@ -34,5 +34,41 @@
     "url": "https://picsum.photos/id/89/200",
     "gender": "WOMEN",
     "price": "$10"
+  },
+  {
+    "id": 5,
+    "name": "Jacket",
+    "size": "SMALL",
+    "color": "BLUE",
+    "url": "https://picsum.photos/id/844/200",
+    "gender": "MEN",
+    "price": "$100"
+  },
+  {
+    "id": 6,
+    "name": "Jacket",
+    "size": "MEDIUM",
+    "color": "GREEN",
+    "url": "https://picsum.photos/id/111/200",
+    "gender": "MEN",
+    "price": "$110"
+  },
+  {
+    "id": 7,
+    "name": "Skirt",
+    "size": "LARGE",
+    "color": "BLUE",
+    "url": "https://picsum.photos/id/278/200",
+    "gender": "WOMEN",
+    "price": "$59.99"
+  },
+  {
+    "id": 8,
+    "name": "Skirt",
+    "size": "SMALL",
+    "color": "RED",
+    "url": "https://picsum.photos/id/567/200",
+    "gender": "WOMEN",
+    "price": "69.99"
   }
 ]

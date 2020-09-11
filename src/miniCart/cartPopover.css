@@ -1,0 +1,12 @@
+.popover-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.popover-body-list-items {
+  list-style: none;
+  padding: 0;
+}
+
+.popover-body-list-item {
+}

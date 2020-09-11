@@ -1,0 +1,16 @@
+.cart-popover-item-wrapper {
+  display: inline-flex;
+  align-items: center;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+.in-cart-item-name {
+  padding-right: 10px;
+  margin-left: 5px;
+}
+
+.in-cart-item-price {
+  padding-left: 20px;
+}

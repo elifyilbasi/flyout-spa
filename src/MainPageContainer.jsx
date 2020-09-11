@@ -1,12 +1,12 @@
 import React from "react";
 
 import ProductPageContainer from "./products/ProductPageContainer/ProductPageContainer";
-import Header from "./header/Header";
+import HeaderContainer from "./header/HeaderContainer";
 
 export default function MainPageContainer() {
   return (
     <>
-      <Header />
+      <HeaderContainer />
       <ProductPageContainer />
     </>
   );
