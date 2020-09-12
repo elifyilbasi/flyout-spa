@@ -1,5 +1,4 @@
 import React from "react";
-import Firebase from "../../../../firebase/firebaseConfig";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Badge } from "reactstrap";
@@ -10,20 +9,8 @@ export default function Product({
   productAddedToCart,
   cartProducts,
   productRemovedFromCart,
+  optionalComponents,
 }) {
-  const getOptionalComponentSetup = () => {
-    return Firebase.database()
-      .ref("/optionalComponents/")
-      .once("value")
-      .then(function (snapshot) {
-        var optionalComps =
-          snapshot.val() && snapshot.val().cartItemsCounterBadge;
-        console.log(optionalComps);
-      });
-  };
-
-  getOptionalComponentSetup();
-
   return (
     <div className="card sm-4 shadow-sm m-3">
       <div className="card-header">
@@ -32,12 +19,14 @@ export default function Product({
         </h4>
       </div>
       <div className="card-body">
-        <div className="product-item-likes-badge-wrapper">
-          <FontAwesomeIcon icon={faHeart} size="2x" color="Tomato" />
-          <Badge className="product-item-likes-badge" color="secondary">
-            {productItem.likes}
-          </Badge>
-        </div>
+        {optionalComponents.likeBadge && (
+          <div className="product-item-likes-badge-wrapper">
+            <FontAwesomeIcon icon={faHeart} size="2x" color="Tomato" />
+            <Badge className="product-item-likes-badge" color="secondary">
+              {productItem.likes}
+            </Badge>
+          </div>
+        )}
         <h2 className="card-title pricing-card-title">
           <small className="text-muted">{productItem.price}</small>
         </h2>

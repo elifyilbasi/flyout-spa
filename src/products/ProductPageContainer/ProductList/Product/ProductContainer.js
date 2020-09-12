@@ -6,6 +6,7 @@ function mapStateToProps(state) {
   return {
     products: state.products.products,
     cartProducts: state.cartProducts.cartProducts,
+    optionalComponents: state.optionalComponents.optionalComponents,
   };
 }
 

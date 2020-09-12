@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo } from "react";
+import Firebase from "../../../firebase/firebaseConfig";
 import ProductContainer from "./Product/ProductContainer";
 import mockProductList from "../../../products.json";
 import "./productList.css";
@@ -7,11 +8,18 @@ export default function ProductList({
   products,
   fetchProducts,
   selectedFilters,
-  productAddedToCart,
+  initializeOptionalComps,
 }) {
   useEffect(() => {
     fetchProducts(mockProductList);
   }, [fetchProducts]);
+
+  useEffect(() => {
+    Firebase.getOptionalComponents().then((snapshot) => {
+      const optionalComps = snapshot.val();
+      initializeOptionalComps(optionalComps);
+    });
+  }, [initializeOptionalComps]);
 
   const filteredProducts = useMemo(() => {
     if (!products) {

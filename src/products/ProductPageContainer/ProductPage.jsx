@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import ProductList from "./ProductList/ProductList";
 import { productAddedToCart, productRemovedFromCart } from "../cartDucks";
 import { fetchProducts } from "../productDucks";
+import { initializeOptionalComps } from "./optionalComponetsDucks";
 
 function mapStateToProps(state) {
   return {
@@ -15,6 +16,7 @@ const mapDispatchToProps = {
   productAddedToCart,
   productRemovedFromCart,
   fetchProducts,
+  initializeOptionalComps,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

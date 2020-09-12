@@ -5,7 +5,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Badge } from "reactstrap";
 import "./Header.css";
 
-export default function Header({ cartProducts }) {
+export default function Header({ cartProducts, optionalComponents }) {
   return (
     <div>
       <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -19,9 +19,11 @@ export default function Header({ cartProducts }) {
                 color="Dodgerblue"
                 size="2x"
               />
-              <Badge className="cart-item-count-badge" color="secondary">
-                {cartProducts.length}
-              </Badge>
+              {optionalComponents.cartItemsCounterBadge && (
+                <Badge className="cart-item-count-badge" color="secondary">
+                  {cartProducts.length}
+                </Badge>
+              )}
             </button>
           </div>
         </nav>

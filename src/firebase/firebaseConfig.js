@@ -1,4 +1,5 @@
 import app from "firebase/app";
+import "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBjNO1No2p2yaQZZaXRRPj0ytS3mqLnh4M",
@@ -14,7 +15,13 @@ const firebaseConfig = {
 class Firebase {
   constructor() {
     app.initializeApp(firebaseConfig);
+
+    this.db = app.database();
   }
+
+  getOptionalComponents = () => {
+    return this.db.ref("/optionalComponents/").once("value");
+  };
 }
 
-export default Firebase;
+export default new Firebase();
