@@ -6,6 +6,8 @@ export default function FilterCategory({
   filterType,
   updateFilter,
   selectedFilters,
+  showLoading,
+  hideLoading,
 }) {
   const filters = useMemo(() => selectedFilters[filterType.categoryName], [
     selectedFilters,
@@ -13,6 +15,7 @@ export default function FilterCategory({
   ]);
 
   const onItemCheckChange = (changedItemName, newValue) => {
+    showLoading();
     const shouldAdd = !!newValue;
     const newValues = [...filters];
 
@@ -23,6 +26,7 @@ export default function FilterCategory({
     }
 
     updateFilter(filterType.categoryName, newValues);
+    hideLoading();
   };
 
   return (
