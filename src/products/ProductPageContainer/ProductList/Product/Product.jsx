@@ -1,4 +1,5 @@
 import React from "react";
+import Firebase from "../../../../firebase/firebaseConfig";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Badge } from "reactstrap";
@@ -7,10 +8,22 @@ import "./product.css";
 export default function Product({
   productItem,
   productAddedToCart,
-  products,
   cartProducts,
   productRemovedFromCart,
 }) {
+  const getOptionalComponentSetup = () => {
+    return Firebase.database()
+      .ref("/optionalComponents/")
+      .once("value")
+      .then(function (snapshot) {
+        var optionalComps =
+          snapshot.val() && snapshot.val().cartItemsCounterBadge;
+        console.log(optionalComps);
+      });
+  };
+
+  getOptionalComponentSetup();
+
   return (
     <div className="card sm-4 shadow-sm m-3">
       <div className="card-header">
