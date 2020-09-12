@@ -21,7 +21,7 @@ export default function CartPopover({ products, cartProducts }) {
         target="Popover1"
         toggle={toggle}
       >
-        <PopoverHeader>Cart</PopoverHeader>
+        <PopoverHeader className="popover-header">Cart</PopoverHeader>
         <PopoverBody>
           {cartProducts.length > 0 ? (
             <ul className="popover-body-list-items">

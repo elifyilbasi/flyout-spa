@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { Badge } from "reactstrap";
 import "./product.css";
 
 export default function Product({
@@ -16,9 +19,15 @@ export default function Product({
         </h4>
       </div>
       <div className="card-body">
-        <h1 className="card-title pricing-card-title">
+        <div className="product-item-likes-badge-wrapper">
+          <FontAwesomeIcon icon={faHeart} size="2x" color="Tomato" />
+          <Badge className="product-item-likes-badge" color="secondary">
+            {productItem.likes}
+          </Badge>
+        </div>
+        <h2 className="card-title pricing-card-title">
           <small className="text-muted">{productItem.price}</small>
-        </h1>
+        </h2>
         <ul className="product-item-description mt-3 mb-4">
           <li>{productItem.gender}</li>
           <li>{productItem.color}</li>

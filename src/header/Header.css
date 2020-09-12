@@ -1,8 +1,13 @@
 .cart-item-count-badge {
   top: -21px;
   right: 1px;
+  position: absolute;
 }
 
 #Popover1 {
   display: flex;
+}
+
+.popover-btn-wrapper {
+  position: relative;
 }

@@ -17,3 +17,14 @@
 .pricing-card-title {
   margin: auto;
 }
+
+.product-item-likes-badge-wrapper {
+  margin: auto;
+  margin-right: 0;
+  padding-right: 10px;
+  position: relative;
+}
+
+.product-item-likes-badge {
+  position: absolute;
+}

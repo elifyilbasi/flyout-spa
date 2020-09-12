@@ -8,5 +8,6 @@
   padding: 0;
 }
 
-.popover-body-list-item {
+.popover-header {
+  text-align: center;
 }
