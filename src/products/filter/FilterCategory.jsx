@@ -26,7 +26,9 @@ export default function FilterCategory({
     }
 
     updateFilter(filterType.categoryName, newValues);
-    hideLoading();
+    setTimeout(() => {
+      hideLoading();
+    }, 500);
   };
 
   return (

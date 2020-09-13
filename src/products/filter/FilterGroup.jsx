@@ -20,13 +20,25 @@ const FILTERS = [
   },
 ];
 
-export default function FilterGroup({ resetFilters }) {
+export default function FilterGroup({
+  resetFilters,
+  hideLoading,
+  showLoading,
+}) {
+  const onResetFilter = () => {
+    showLoading();
+    resetFilters();
+    setTimeout(() => {
+      hideLoading();
+    }, 500);
+  };
+
   return (
     <aside className="col-sm-2 m-2">
       <div className="filter-group-wrapper">
         <p>Filter Group</p>
         <button
-          onClick={() => resetFilters()}
+          onClick={() => onResetFilter()}
           type="button"
           className="btn btn-outline-primary"
         >

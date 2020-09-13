@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import Product from "./Product";
 import { productAddedToCart, productRemovedFromCart } from "../../../cartDucks";
+import { hideLoading, showLoading } from "../../../../app/loading/loadingDucks";
 
 function mapStateToProps(state) {
   return {
@@ -13,6 +14,8 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   productAddedToCart,
   productRemovedFromCart,
+  hideLoading,
+  showLoading,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

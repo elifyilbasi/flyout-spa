@@ -10,7 +10,25 @@ export default function Product({
   cartProducts,
   productRemovedFromCart,
   optionalComponents,
+  showLoading,
+  hideLoading,
 }) {
+  const onProductAddedToCart = (id) => {
+    showLoading();
+    productAddedToCart(id);
+    setTimeout(() => {
+      hideLoading();
+    }, 500);
+  };
+
+  const onProductRemovedFromCart = (id) => {
+    showLoading();
+    productRemovedFromCart(id);
+    setTimeout(() => {
+      hideLoading();
+    }, 500);
+  };
+
   return (
     <div className="card sm-4 shadow-sm m-3">
       <div className="card-header">
@@ -41,7 +59,7 @@ export default function Product({
         ></img>
         {cartProducts.includes(productItem.id) ? (
           <button
-            onClick={() => productRemovedFromCart(productItem.id)}
+            onClick={() => onProductRemovedFromCart(productItem.id)}
             type="button"
             className="btn btn-danger btn-lg w-100 mt-2"
           >
@@ -49,7 +67,7 @@ export default function Product({
           </button>
         ) : (
           <button
-            onClick={() => productAddedToCart(productItem.id)}
+            onClick={() => onProductAddedToCart(productItem.id)}
             type="button"
             className="btn btn-secondary btn-lg w-100 mt-2"
           >
