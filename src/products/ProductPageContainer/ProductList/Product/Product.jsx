@@ -26,7 +26,7 @@ export default function Product({
     productRemovedFromCart(id);
     setTimeout(() => {
       hideLoading();
-    }, 500);
+    }, 50000);
   };
 
   return (
@@ -51,6 +51,7 @@ export default function Product({
         <ul className="product-item-description mt-3 mb-4">
           <li>{productItem.gender}</li>
           <li>{productItem.color}</li>
+          <li>{productItem.size}</li>
         </ul>
         <img
           src={productItem.url}

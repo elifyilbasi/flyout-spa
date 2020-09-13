@@ -42,7 +42,7 @@ export default function FilterCategory({
             {filterType.values.map((filterItem) => {
               return (
                 <FilterCategoryItem
-                  key={filterItem.categoryName}
+                  key={filterItem.displayName}
                   checked={filters.includes(filterItem)}
                   onCheckedChange={onItemCheckChange}
                   itemName={filterItem}

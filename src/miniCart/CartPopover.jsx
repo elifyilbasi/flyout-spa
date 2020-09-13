@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import CartPopoverItem from "./CartPopoverItem";
+import CartPopoverItemContainer from "./CartPopoverItemContainer";
 import "./cartPopover.css";
 import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
 
@@ -28,10 +28,12 @@ export default function CartPopover({ products, cartProducts }) {
               {cardItems.map((item) => {
                 return (
                   <li className="popover-body-list-item">
-                    <CartPopoverItem
+                    <CartPopoverItemContainer
                       name={item.name}
                       price={item.price}
                       url={item.url}
+                      id={item.id}
+                      key={item.id}
                     />
                   </li>
                 );
